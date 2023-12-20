@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .btn {
+            width: 200px;
+            padding: 18px 0;
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            font-weight: bold;
+            text-align: center;
+            font-family: Arial;
+            color: #fff;
+            border-radius: 0;
+            background: #0000ee;
+            cursor: pointer;
+        }
+
+        .modalWrapper {
+            width: 100%;
+            height: 100%;
+            position: fixed;
+            top: 0;
+            left: 0;
+            background: #c8c8c8;
+            visibility: hidden;
+            opacity: 0;
+            transition: all .5s ease-in-out;
+        }
+
+        .modalWrapper.open {
+            opacity: 1;
+            visibility: visible;
+        }
+
+        .modal {
+            width: 600px;
+            height: 400px;
+            display: block;
+            margin: 50% 0 0 -300px;
+            position: relative;
+            top: 50%;
+            left: 50%;
+            background: #fff;
+            opacity: 0;
+            transition: all 0.75s ease-in-out;
+        }
+
+        .modalWrapper.open .modal {
+            margin-top: -200px;
+            opacity: 1;
+        }
+
+        .head {
+            width: 90%;
+            height: 32px;
+            padding: 12px 10px 12px 50px;
+            overflow: hidden;
+            background: #0000ee;
+        }
+
+        .closeBtn {
+            font-family: Arial;
+            font-size: 28px;
+            display: block;
+            float: right;
+            color: #fff;
+            cursor: pointer;
+        }
+
+        .content {
+        font-family: Arial;
+        padding: 10%;
+        font-size: 24px;
+        text-align: center;
+        color: #0000ee;
+        }
+
+    </style>
+</head>
+    <body>
+        <div class="btn" onclick="toggleModal()">Launch modal3</div>
+        <div id="modalWrapper" class="modalWrapper">
+            <div class="modal">
+                <div class="head">
+                    <div class="closeBtn" onclick="toggleModal()">X</div>
+                </div>
+                <div class="content">The best Lorem Ipsum Generator in all the sea! Heave this scurvy copyfiller fer yar next adventure and cajol yar clients into walking the plank with ev'ry layout! Configure above, then get yer pirate ipsum...own the high seas, arg!</div>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        function toggleModal() {
+            const modalWrapper = document.querySelector('#modalWrapper');
+            modalWrapper.classList.toggle('open');
+        }
+    </script>
+    </body>
+</html>
